@@ -1,0 +1,19 @@
+{
+  "language": "kannada",
+  "answer": "ಅಕ್ಕಿ ಬೆಳೆ ರೈತರಿಗೆ ಸಹಾಯ ಮಾಡುವ ಯೋಜನೆಗಳು ಇಲ್ಲಿವೆ:\n\n*   ** Krishishi Vikas Yojana:** ರೈತರು कर्नाटक ರಾಜ್ಯದ ಕರणा ಕಡೆದಲ್ಲಿರುವ ಅಕ್ಕಿ ಬೆಳೆ పండించే 경우, 50% subsidy τουςಲ್ಲಿ ಸಿಗುತ್ತದೆ. ಜೊತೆಗೆ, ಅವರು 5000 ರೂ. каждомуacre upfront cash transfer receiv करू शकतात.\n\n*   **Akki Bele Yojane:** ఈ ಯೋಜನೆಯು ಮಂಡಯಾ ಮತ್ತು Mysore ಪ್ರದೇಶದ ರೈತರಿಗೆ ಉಚಿತších 씨앗ಗಳು ಮತ್ತು pesticideಗಳು ಕಡಿಮೆ 30% зни ಇದೆ.\n\n*   **Τραક્ટર લોન ಯೋಜನೆಯು:** 5 acresहून ಹೆಚ್ಚು arable land ಹೊಂದಿರುವ ರೈತರಿಗೆ, 4% per annum rate-ல் baixa loan available.\n\nYou can use these schemes to improve your rice production and earn more money.",
+  "sources": [
+    {
+      "content": "Agriculture Schemes Document\n1. Rice Subsidy Scheme: Farmers growing rice in Karnataka are eligible for a 50% subsidy on\nfertilizers and a direct cash transfer of Rs. 5000 per acre under the Krishi Vikas Yojana.\n2. Akki Bele Yojane: This scheme supports rice farmers in Mandya and Mysore regions with free\nseeds and pesticide discounts up to 30%. Note: The actual Kannada text is transliterated here due\nto font limitations in basic fpdf, but the AI will process and return Kannada.\n3. Tractor Loan Scheme: A low-interest loan of 4% per annum is available for purchasing new\ntractors for farmers with more than 5 acres of land.",
+      "metadata": {
+        "producer": "PyFPDF 1.7.2 http://pyfpdf.googlecode.com/",
+        "chunk_id": "8437398b-0f1b-452b-ae60-e8d071afa610",
+        "creationdate": "D:20260514151708",
+        "source": "C:\\Users\\91866\\Documents\\DEVARE KAPADAPPA\\t_el\\AgriConnect-AI-Service\\scripts\\..\\data\\govt_schemes\\dummy_schemes.pdf",
+        "creator": "PyPDF",
+        "total_pages": 1,
+        "page_label": "1",
+        "page": 0
+      }
+    }
+  ]
+}

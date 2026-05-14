@@ -1,6 +1,6 @@
 from langchain_community.vectorstores import Chroma
 from typing import List
-from langchain.schema import Document
+from langchain_core.documents import Document
 from app.rag.vector_store import get_vector_store
 
 def get_retriever(vector_store: Chroma = None, k: int = 4):

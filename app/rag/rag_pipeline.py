@@ -3,7 +3,7 @@ from app.rag.prompt_builder import get_rag_prompt
 from app.llm.llm_service import generate_response
 from app.core.logger import get_logger
 from typing import Tuple, List
-from langchain.schema import Document
+from langchain_core.documents import Document
 
 logger = get_logger(__name__)
 

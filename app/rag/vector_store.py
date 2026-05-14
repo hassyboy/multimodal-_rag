@@ -1,6 +1,6 @@
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain.schema import Document
+from langchain_core.documents import Document
 from typing import List
 from app.core.config import settings
 from app.rag.embeddings import get_embeddings_model

@@ -1,4 +1,4 @@
-from langchain.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 
 # Strict prompt to prevent hallucination and enforce context usage
 # Enhanced for multilingual support and farmer-friendly explanations

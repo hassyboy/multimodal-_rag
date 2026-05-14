@@ -1,6 +1,6 @@
 from langchain_community.document_loaders import PyPDFLoader
 from typing import List
-from langchain.schema import Document
+from langchain_core.documents import Document
 from app.core.logger import get_logger
 
 logger = get_logger(__name__)

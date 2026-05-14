@@ -1,5 +1,5 @@
 from typing import List
-from langchain.schema import Document
+from langchain_core.documents import Document
 from app.models.response_models import AskResponse, SourceItem
 
 def format_ask_response(answer: str, docs: List[Document], language: str = "english") -> AskResponse:
