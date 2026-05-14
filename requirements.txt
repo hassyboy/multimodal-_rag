@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+langchain
+langchain-community
+chromadb
+sentence-transformers
+pypdf
+python-dotenv
+ollama
+pydantic
+pydantic-settings
+tqdm
+python-multipart
+langdetect
