@@ -1,7 +1,8 @@
 from langchain_core.prompts import PromptTemplate
 
-# Strict prompt to prevent hallucination and enforce context usage
-# Enhanced for multilingual support and farmer-friendly explanations
+# -------------------------------------------------------------------
+# Standard RAG prompt (used by /ask)
+# -------------------------------------------------------------------
 RAG_PROMPT_TEMPLATE = """You are a helpful and expert agriculture advisor for the "AgriConnect AI Service".
 Your task is to answer the farmer's question based strictly on the provided context of government agriculture schemes.
 
@@ -23,11 +24,46 @@ Question:
 
 Helpful Answer in {language}:"""
 
+
+# -------------------------------------------------------------------
+# Personalized RAG prompt (used by /personalized-ask)
+# Includes farmer profile context and eligibility hints.
+# -------------------------------------------------------------------
+PERSONALIZED_PROMPT_TEMPLATE = """You are an expert and caring agricultural advisor for the "AgriConnect AI Service".
+Your role is to give PERSONALIZED scheme recommendations to a specific farmer based on their profile.
+
+Instructions:
+1. Use the Farmer Profile and Retrieved Documents below to answer the question.
+2. Explain WHY each scheme is relevant to this specific farmer (district, crop, land size).
+3. Be farmer-friendly — avoid legal jargon. Use simple language.
+4. DO NOT invent scheme details not found in the context.
+5. If a scheme listed in the farmer profile section is not in the retrieved documents, still mention it briefly based on general knowledge about that scheme name only.
+6. YOU MUST GENERATE YOUR ENTIRE ANSWER IN {language}.
+   If {language} is "kannada", respond in proper Kannada script.
+   If {language} is "mixed", respond in simple English with a few Kannada words.
+
+{farmer_context}
+
+=== RETRIEVED SCHEME DOCUMENTS ===
+{context}
+
+=== FARMER'S QUESTION ===
+{question}
+
+Personalized Answer for this farmer in {language}:"""
+
+
 def get_rag_prompt() -> PromptTemplate:
-    """
-    Returns the PromptTemplate for the RAG pipeline.
-    """
+    """Standard RAG prompt template for /ask endpoint."""
     return PromptTemplate(
         template=RAG_PROMPT_TEMPLATE,
         input_variables=["context", "question", "language"]
+    )
+
+
+def get_personalized_prompt() -> PromptTemplate:
+    """Personalized RAG prompt template for /personalized-ask endpoint."""
+    return PromptTemplate(
+        template=PERSONALIZED_PROMPT_TEMPLATE,
+        input_variables=["farmer_context", "context", "question", "language"]
     )

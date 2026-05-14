@@ -1,0 +1,70 @@
+{
+  "language": "kannada",
+  "farmer_profile": {
+    "farmer_name": null,
+    "district": "Mandya",
+    "state": "Karnataka",
+    "land_size": 3.0,
+    "crop_type": "rice",
+    "irrigation_type": null,
+    "income_category": null,
+    "farmer_category": null,
+    "gender": null,
+    "farming_type": null,
+    "language": "kannada",
+    "extraction_confidence": 0.43
+  },
+  "recommended_schemes": [
+    {
+      "scheme_name": "Akki Bele Yojane",
+      "eligibility_score": 100.0,
+      "reason": "Land size (3.0 acres) qualifies; Rice is a priority crop for this scheme",
+      "benefit_summary": "Free seeds and pesticide discount for rice farmers in Mandya/Mysore",
+      "how_to_apply": null
+    },
+    {
+      "scheme_name": "Krishi Vikas Yojana",
+      "eligibility_score": 100.0,
+      "reason": "Land size (3.0 acres) qualifies; Rice is a priority crop for this scheme",
+      "benefit_summary": "50% subsidy on fertilizers + Rs 5000/acre for rice farmers in Karnataka",
+      "how_to_apply": null
+    },
+    {
+      "scheme_name": "PM-KISAN",
+      "eligibility_score": 90.0,
+      "reason": "Land size (3.0 acres) qualifies; Applicable to all crops",
+      "benefit_summary": "Rs. 6000/year income support for all farmer families",
+      "how_to_apply": null
+    },
+    {
+      "scheme_name": "PM Fasal Bima Yojana",
+      "eligibility_score": 90.0,
+      "reason": "Land size (3.0 acres) qualifies; Applicable to all crops",
+      "benefit_summary": "Crop insurance for all farmers against natural disasters",
+      "how_to_apply": null
+    },
+    {
+      "scheme_name": "Kisan Credit Card",
+      "eligibility_score": 90.0,
+      "reason": "Land size (3.0 acres) qualifies; Applicable to all crops",
+      "benefit_summary": "Low-interest credit line for agricultural inputs",
+      "how_to_apply": null
+    }
+  ],
+  "answer": "I apologize, but I encountered an error while trying to generate a response. Error: Ollama call failed with status code 500. Details: {\"error\":\"model requires more system memory (1.1 GiB) than is available (898.8 MiB)\"}",
+  "sources": [
+    {
+      "content": "Agriculture Schemes Document\n1. Rice Subsidy Scheme: Farmers growing rice in Karnataka are eligible for a 50% subsidy on\nfertilizers and a direct cash transfer of Rs. 5000 per acre under the Krishi Vikas Yojana.\n2. Akki Bele Yojane: This scheme supports rice farmers in Mandya and Mysore regions with free\nseeds and pesticide discounts up to 30%. Note: The actual Kannada text is transliterated here due\nto font limitations in basic fpdf, but the AI will process and return Kannada.\n3. Tractor Loan Scheme: A low-interest loan of 4% per annum is available for purchasing new\ntractors for farmers with more than 5 acres of land.",
+      "metadata": {
+        "chunk_id": "8437398b-0f1b-452b-ae60-e8d071afa610",
+        "page_label": "1",
+        "source": "C:\\Users\\91866\\Documents\\DEVARE KAPADAPPA\\t_el\\AgriConnect-AI-Service\\scripts\\..\\data\\govt_schemes\\dummy_schemes.pdf",
+        "total_pages": 1,
+        "producer": "PyFPDF 1.7.2 http://pyfpdf.googlecode.com/",
+        "creator": "PyPDF",
+        "creationdate": "D:20260514151708",
+        "page": 0
+      }
+    }
+  ]
+}
