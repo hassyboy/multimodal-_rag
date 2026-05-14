@@ -51,19 +51,19 @@
       "how_to_apply": null
     }
   ],
-  "answer": "I apologize, but I encountered an error while trying to generate a response. Error: Ollama call failed with status code 500. Details: {\"error\":\"model requires more system memory (1.1 GiB) than is available (898.8 MiB)\"}",
+  "answer": "नमस्कार! మీ వ్యవసాయానికి உதவ நான் இங்கே இருக்கிறேன். మీ వ్యవసాయం మಂಡయದಲ್ಲಿ 3 ಎಕರೆ ಜಮೀನು ಹೊಂದಿರುವ 만큼, మీకు కొన్ని ప్రయోజనకరమైన ಯೋಜನೆలు అందుబాటులో ఉన్నాయి. మీ ప్రాంతం అయిన మಂಡయంలో, మీరు రైతాన్ని పండించేందుకు కాబట్టి, మీరు ఈ క్రింది పథకాలకు అర్హులు:\n\n*   **అಕ್ಕಿ ಬೆಳೆ పథకం (Akki Bele Yojana):** మీ 3 ಎಕರೆ ಜಮೀనumbలో మీరు రైతాన్ని పండించాలనుకుంటే, ఈ పథకం మీకు 50% రాయితీ మరియు 5000 రూపాయల నగదు బదిలీని అందిస్తుంది. ఇది మీ ప్రాంతంలోని మಂಡయ మరియు మైసూరు ప్రాంతాల్లో రైతాన్ని పండించే రైతులకు చాలా ఉపయోగకరంగా ఉంటుంది.\n\n*   **క్రిషిયા వికాసమ్ యాన (Krishi Vikas Yojana):** మీ 3 ಎಕರೆ ಜಮೀనumbలో మీరు ఈ పథకం కోసం దరఖాస్తు చేసుకోవచ్చు. ఇది మీ ప్రాంతంలోని రైతాన్ని పండించే రైతులకు 50% రాయితీ మరియు 5000 రూపాయల నదులను అందిస్తుంది.\n\n*   **పీమ్ ఫాసల్ బైమి యాన (PM Fasal Bima Yojana):** మీ 3 ಎಕರೆ ಜಮೀనumbలో మీరు ఈ పథకం కోసం దరఖాస్తు చేసుకోవచ్చు. ఇది అన్ని రైతులకు పంట బీమాను అందిస్తుంది.\n\n*   ** Kisan కరెంటు కార్డు (Kisan Credit Card):** మీ 3 ಎಕರೆ ಜಮೀనumbలో మీరు ఈ పథకం కోసం దరఖాస్తు చేసుకోవచ్చు. ఇది అన్ని రైతులకు రుణం ఇవ్వడానికి ఉపయోగపడుతుంది.\n\nఈ పథకాలు మీ వ్యవసాయం కోసం చాలా ఉపయోగకరంగా ఉంటాయి. మీ వ్యవసాయం గురించి మీకు ఏమైనా సందేహాలుంటే అడగడానికి వెనుకాడకండి.",
   "sources": [
     {
       "content": "Agriculture Schemes Document\n1. Rice Subsidy Scheme: Farmers growing rice in Karnataka are eligible for a 50% subsidy on\nfertilizers and a direct cash transfer of Rs. 5000 per acre under the Krishi Vikas Yojana.\n2. Akki Bele Yojane: This scheme supports rice farmers in Mandya and Mysore regions with free\nseeds and pesticide discounts up to 30%. Note: The actual Kannada text is transliterated here due\nto font limitations in basic fpdf, but the AI will process and return Kannada.\n3. Tractor Loan Scheme: A low-interest loan of 4% per annum is available for purchasing new\ntractors for farmers with more than 5 acres of land.",
       "metadata": {
-        "chunk_id": "8437398b-0f1b-452b-ae60-e8d071afa610",
-        "page_label": "1",
-        "source": "C:\\Users\\91866\\Documents\\DEVARE KAPADAPPA\\t_el\\AgriConnect-AI-Service\\scripts\\..\\data\\govt_schemes\\dummy_schemes.pdf",
-        "total_pages": 1,
+        "page": 0,
         "producer": "PyFPDF 1.7.2 http://pyfpdf.googlecode.com/",
-        "creator": "PyPDF",
         "creationdate": "D:20260514151708",
-        "page": 0
+        "creator": "PyPDF",
+        "chunk_id": "8437398b-0f1b-452b-ae60-e8d071afa610",
+        "total_pages": 1,
+        "source": "C:\\Users\\91866\\Documents\\DEVARE KAPADAPPA\\t_el\\AgriConnect-AI-Service\\scripts\\..\\data\\govt_schemes\\dummy_schemes.pdf",
+        "page_label": "1"
       }
     }
   ]

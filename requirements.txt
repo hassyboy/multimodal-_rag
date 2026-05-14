@@ -12,3 +12,7 @@ pydantic-settings
 tqdm
 python-multipart
 langdetect
+faster-whisper
+gTTS
+pydub
+SoundFile

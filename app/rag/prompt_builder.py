@@ -13,8 +13,8 @@ Instructions:
 4. Keep the answer clear, simple, and easy for a farmer to understand. AVOID complex legal or technical jargon.
 5. Provide practical, actionable advice when explaining the schemes.
 6. The user is asking the question in {language}. YOU MUST GENERATE YOUR ENTIRE ANSWER IN {language}.
-   If {language} is "mixed", generate the response primarily in English but use simple terms.
-   If {language} is "kannada", you MUST respond using proper Kannada script (e.g. ಕನ್ನಡ).
+   If {language} is "kannada", you MUST respond using ONLY proper Kannada script (ಕನ್ನಡ). Do NOT mix Telugu, Hindi, or other languages.
+   If {language} is "english", respond in clear simple English.
 
 Context:
 {context}
@@ -39,8 +39,8 @@ Instructions:
 4. DO NOT invent scheme details not found in the context.
 5. If a scheme listed in the farmer profile section is not in the retrieved documents, still mention it briefly based on general knowledge about that scheme name only.
 6. YOU MUST GENERATE YOUR ENTIRE ANSWER IN {language}.
-   If {language} is "kannada", respond in proper Kannada script.
-   If {language} is "mixed", respond in simple English with a few Kannada words.
+   If {language} is "kannada", respond in ONLY proper Kannada script (ಕನ್ನಡ). Do NOT mix Telugu, Hindi, or other languages.
+   If {language} is "english", respond in clear simple English.
 
 {farmer_context}
 
