@@ -13,10 +13,12 @@ export const personalizedAsk = (question, sessionId = null) =>
   api.post('/personalized-ask', { question, session_id: sessionId })
 
 // ─── Voice ───────────────────────────────────────────────────────
-export const voiceAsk = (audioBlob) => {
+export const voiceAsk = (audioBlob, languageHint = 'kn') => {
   const form = new FormData()
-  // IMPORTANT: field name must match FastAPI parameter name: audio
+  // field name must match FastAPI parameter: audio
   form.append('audio', audioBlob, 'recording.webm')
+  // Pass language hint so Whisper uses correct decoder
+  form.append('language_hint', languageHint)
   // Do NOT set Content-Type manually — axios sets it with correct multipart boundary
   return api.post('/voice-ask', form)
 }

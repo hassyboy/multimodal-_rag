@@ -1,7 +1,7 @@
 """
 Voice Pipeline — Refined
 Orchestrates the complete voice-to-voice agricultural assistant flow.
-Audio → Validate → STT → RAG → LLM → TTS → Audio
+Audio → Validate → STT → Language Verify → RAG → LLM → TTS → Audio
 """
 import time
 from app.voice.audio_utils import validate_audio_file, get_audio_info, cleanup_file
@@ -10,7 +10,9 @@ from app.voice.text_to_speech import text_to_speech
 from app.rag.retriever import retrieve_documents
 from app.rag.prompt_builder import get_rag_prompt
 from app.llm.llm_service import generate_response
+from app.utils.language_detector import detect_language
 from app.core.logger import get_logger
+from typing import Optional
 
 logger = get_logger(__name__)
 
@@ -21,7 +23,11 @@ FALLBACK_MESSAGES = {
 }
 
 
-def run_voice_pipeline(audio_file_path: str, cleanup_input: bool = True) -> dict:
+def run_voice_pipeline(
+    audio_file_path: str,
+    cleanup_input: bool = True,
+    language_hint: Optional[str] = None,
+) -> dict:
     """
     Full voice-to-voice RAG pipeline.
 
@@ -54,7 +60,7 @@ def run_voice_pipeline(audio_file_path: str, cleanup_input: bool = True) -> dict
 
     # ─── STEP 2: Speech-to-Text ────────────────────────────────────
     t0 = time.time()
-    stt_result = transcribe_audio(audio_file_path)
+    stt_result = transcribe_audio(audio_file_path, language_hint=language_hint)
     stt_elapsed = round(time.time() - t0, 2)
 
     if not stt_result["success"] or not stt_result["transcribed_text"].strip():
@@ -64,10 +70,28 @@ def run_voice_pipeline(audio_file_path: str, cleanup_input: bool = True) -> dict
         return _error_result(msg, stage="speech_to_text")
 
     transcribed_text = stt_result["transcribed_text"]
-    language = stt_result["detected_language"]
     confidence = stt_result["confidence"]
+
+    # ─── STEP 2b: Verify language via Unicode detector ─────────────
+    # Whisper's language detection is unreliable for Kannada without a hint.
+    # Re-check the actual transcribed characters using Unicode range detection.
+    whisper_lang = stt_result["detected_language"]
+    unicode_lang = detect_language(transcribed_text)
+
+    # If user gave a hint, trust it over Whisper's guess
+    if language_hint == 'kn':
+        language = 'kannada'
+    elif language_hint == 'en':
+        language = 'english'
+    elif unicode_lang == 'kannada':
+        # Transcribed text contains Kannada script → definitely Kannada
+        language = 'kannada'
+    else:
+        language = whisper_lang
+
     logger.info(
-        f"[STEP 2] STT done in {stt_elapsed}s | lang={language} | "
+        f"[STEP 2] STT done in {stt_elapsed}s | whisper={whisper_lang} | "
+        f"unicode={unicode_lang} | hint={language_hint} | final={language} | "
         f"conf={confidence} | '{transcribed_text[:60]}'"
     )
 

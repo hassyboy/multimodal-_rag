@@ -4,20 +4,23 @@ Voice-enabled RAG endpoint.
 Accepts audio upload, returns transcription + LLM answer + audio response path.
 """
 import os
-import uuid
 import tempfile
-from fastapi import APIRouter, UploadFile, File, HTTPException
+from fastapi import APIRouter, UploadFile, File, Form, HTTPException
 from fastapi.responses import JSONResponse
 from app.voice.voice_pipeline import run_voice_pipeline
 from app.voice.audio_utils import SUPPORTED_FORMATS
 from app.core.logger import get_logger
+from typing import Optional
 
 router = APIRouter()
 logger = get_logger(__name__)
 
 
 @router.post("/voice-ask")
-async def voice_ask(audio: UploadFile = File(..., description="Audio file (wav, mp3, m4a, ogg, flac)")):
+async def voice_ask(
+    audio: UploadFile = File(..., description="Audio file (wav, mp3, m4a, ogg, flac, webm)"),
+    language_hint: Optional[str] = Form(None, description="Language hint: 'kn' for Kannada, 'en' for English"),
+):
     """
     Voice-based agricultural scheme assistant.
 
@@ -47,10 +50,20 @@ async def voice_ask(audio: UploadFile = File(..., description="Audio file (wav, 
             tmp.write(content)
             temp_path = tmp.name
 
-        logger.info(f"Received audio upload: {audio.filename} ({len(content)/1024:.1f} KB) → {temp_path}")
+        logger.info(f"Voice ask | file={audio.filename} | lang_hint={language_hint} | {len(content)/1024:.1f} KB")
 
-        # Run the full voice pipeline
-        result = run_voice_pipeline(audio_file_path=temp_path, cleanup_input=True)
+        # Map hint string to whisper language code
+        whisper_lang = None
+        if language_hint == 'kn':
+            whisper_lang = 'kn'
+        elif language_hint == 'en':
+            whisper_lang = 'en'
+
+        result = run_voice_pipeline(
+            audio_file_path=temp_path,
+            cleanup_input=True,
+            language_hint=whisper_lang,
+        )
 
         if not result["success"]:
             raise HTTPException(
